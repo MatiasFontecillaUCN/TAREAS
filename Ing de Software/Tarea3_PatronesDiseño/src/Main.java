@@ -1,9 +1,9 @@
 public class Main {
     public static void main(String[] args) {
-        TournamentComponent match1 = new Match("Match 1", "La Bombonera", "Team 1", "Team 2");
+        TournamentComponent match1 = new Match("Match 1", "La Bombonera", "Boca Juniors", "Team 2");
         TournamentComponent match2 = new Match("Match 2", "Estadio Nacional", "Team 3", "Team 4");
         TournamentComponent match3 = new Match("Match 3", "Etihad Stadium", "Team 5", "Team 6");
-        TournamentComponent match4 = new Match("Match 4", "El Monumental", "Team 7", "Team 8");
+        TournamentComponent match4 = new Match("Match 4", "El Monumental", "River Plate", "Team 8");
 
         TournamentComponent round1 = new TournamentRound("Grupo A", "Primera Fase");
         round1.add(match1);
