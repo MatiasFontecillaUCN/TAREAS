@@ -39,4 +39,14 @@ class TournamentRound implements TournamentComponent {
             component.display();
         }
     }
+
+    public TournamentComponent search(String name){
+        for(TournamentComponent component : components){
+            TournamentComponent result = component.search(name);
+            if(result != null){
+                return result;
+            }
+        }
+        return null;
+    }
 }

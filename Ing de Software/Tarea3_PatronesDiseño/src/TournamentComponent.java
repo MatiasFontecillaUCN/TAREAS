@@ -5,4 +5,5 @@ interface TournamentComponent {
     String getName();
     String getDescription();
     void display();
+    TournamentComponent search(String name);
 }

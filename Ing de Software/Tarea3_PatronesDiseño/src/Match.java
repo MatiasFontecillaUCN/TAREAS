@@ -45,4 +45,11 @@ class Match implements TournamentComponent {
         System.out.println("    " + getDescription());
         System.out.println("    " + getTeam1() + " vs " + getTeam2());
     }
+
+    public TournamentComponent search(String name){
+        if(this.name.equals(name)){
+            return this;
+        }
+        return null;
+    }
 }

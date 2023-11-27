@@ -17,6 +17,17 @@ public class Main {
         round3.add(round1);
         round3.add(round2);
 
-        round3.display();
+        String name = "Match 1";
+        TournamentComponent FindMatch = round3.search(name);
+
+        if(FindMatch != null){
+            System.out.println("Encontrado, la informacion de lo buscado es: ");
+            FindMatch.display();
+        }
+        else{
+            System.out.println(name + " no encontrado");
+        }
+
+        //round3.display();
     }
 }
