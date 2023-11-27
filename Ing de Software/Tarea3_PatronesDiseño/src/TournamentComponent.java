@@ -1,54 +1,54 @@
 /**
- * Interface for a component in a tournament.
+ * Interfaz para un componente en un torneo.
  */
 interface TournamentComponent {
 
     /**
-     * Adds a component to this component.
+     * Añade un componente a este componente.
      *
-     * @param component The component to be added.
+     * @param component El componente a añadir.
      */
     void add(TournamentComponent component);
 
     /**
-     * Removes a component from this component by name.
+     * Elimina un componente de este componente por nombre.
      *
-     * @param component The name of the component to be removed.
+     * @param component El nombre del componente a eliminar.
      */
     void remove(String component);
 
     /**
-     * Retrieves a child component at a given index.
+     * Recupera un componente hijo en un índice dado.
      *
-     * @param i The index of the child component to retrieve.
-     * @return The child component at the given index.
+     * @param i El índice del componente hijo a recuperar.
+     * @return El componente hijo en el índice dado.
      */
     TournamentComponent getChild(int i);
 
     /**
-     * Retrieves the name of this component.
+     * Recupera el nombre de este componente.
      *
-     * @return The name of this component.
+     * @return El nombre de este componente.
      */
     String getName();
 
     /**
-     * Retrieves the description of this component.
+     * Recupera la descripción de este componente.
      *
-     * @return The description of this component.
+     * @return La descripción de este componente.
      */
     String getDescription();
 
     /**
-     * Displays information about this component.
+     * Muestra información sobre este componente.
      */
     void display();
 
     /**
-     * Searches for a component by name.
+     * Busca un componente por nombre.
      *
-     * @param name The name of the component to search for.
-     * @return The component with the given name, or null if no such component is found.
+     * @param name El nombre del componente a buscar.
+     * @return El componente con el nombre dado, o null si no se encuentra tal componente.
      */
     TournamentComponent search(String name);
 }
