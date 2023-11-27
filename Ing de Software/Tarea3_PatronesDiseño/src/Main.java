@@ -1,5 +1,18 @@
 /**
  * Clase principal que ejecuta el programa.
+ * 
+ * Para la implementación de este patrón, se creó una clase abstracta TournamentComponent, que define los métodos
+ * que deben implementar las clases que hereden de ella. Estas clases son Match y TournamentRound. La clase Match
+ * representa un partido, y la clase TournamentRound representa una ronda del torneo. La clase TournamentRound tiene
+ * una lista de TournamentComponent, que puede ser de partidos o de rondas. De esta forma, se puede crear una
+ * estructura de árbol para representar el torneo.
+ * 
+ * En este caso, para representar la implementación del patrón Composite, se creó un torneo de fútbol, con sus
+ * respectivos partidos y rondas. Se crearon los partidos, con sus respectivos equipos y estadios. Luego, se crearon
+ * las rondas del torneo, con sus respectivos partidos. Las rondas de cuartos de final, semifinales y finales. Luego,
+ * se agregaron los partidos a las rondas correspondientes. Finalmente, se agregaron las rondas a la ronda de finales.
+ * 
+ * Finalmente, se implementó un buscar y un eliminar, para experimentar con el patrón Composite.
  */
 public class Main {
 
