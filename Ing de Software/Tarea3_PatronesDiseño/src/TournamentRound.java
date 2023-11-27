@@ -43,7 +43,6 @@ class TournamentRound implements TournamentComponent {
                 try {
                     component.remove(searchedComponent);
                 } catch (Exception e) {
-                    return;
                 }
             }
         }
