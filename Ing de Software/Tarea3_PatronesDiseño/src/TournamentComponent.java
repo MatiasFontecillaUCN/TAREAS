@@ -1,6 +1,6 @@
 interface TournamentComponent {
     void add(TournamentComponent component);
-    void remove(TournamentComponent component);
+    void remove(String component);
     TournamentComponent getChild(int i);
     String getName();
     String getDescription();

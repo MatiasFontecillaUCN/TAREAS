@@ -15,8 +15,19 @@ class TournamentRound implements TournamentComponent {
         components.add(component);
     }
 
-    public void remove(TournamentComponent component) {
-        components.remove(component);
+    public void remove(String searchedComponent) {
+        for (TournamentComponent component : components) {
+            if(component.getName().equals(searchedComponent)) {
+                components.remove(component);
+            }else{
+
+                try {
+                    component.remove(searchedComponent);
+                }catch (Exception e){
+                    return;
+                }
+            }
+        }
     }
 
     public TournamentComponent getChild(int i) {

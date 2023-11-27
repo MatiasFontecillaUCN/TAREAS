@@ -16,7 +16,7 @@ class Match implements TournamentComponent {
         throw new UnsupportedOperationException();
     }
 
-    public void remove(TournamentComponent component) {
+    public void remove(String component) {
         throw new UnsupportedOperationException();
     }
 

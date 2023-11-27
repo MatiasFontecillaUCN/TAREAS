@@ -1,33 +1,69 @@
 public class Main {
     public static void main(String[] args) {
-        TournamentComponent match1 = new Match("Match 1", "La Bombonera", "Boca Juniors", "Team 2");
-        TournamentComponent match2 = new Match("Match 2", "Estadio Nacional", "Team 3", "Team 4");
-        TournamentComponent match3 = new Match("Match 3", "Etihad Stadium", "Team 5", "Team 6");
-        TournamentComponent match4 = new Match("Match 4", "El Monumental", "River Plate", "Team 8");
+        // Defino los partidos, con sus respectivos equipos y estadios.
+        TournamentComponent match1 = new Match("Cuarto de final 1", "Estadio Elías Figueroa Brander", "Chile",
+                "Uruguay");
+        TournamentComponent match2 = new Match("Cuarto de final 2", "Estadio Sausalito", "Bolivia", "Perú");
+        TournamentComponent match3 = new Match("Cuarto de final 3", "Estadio Elías Figueroa Brander", "Argentina",
+                "Colombia");
+        TournamentComponent match4 = new Match("Cuarto de final 4", "Estadio Sausalito", "Brasil", "Paraguay");
+        TournamentComponent match5 = new Match("Semifinal 1", "Estadio Calvo y Bascuñan", "Chile", "Perú");
+        TournamentComponent match6 = new Match("Semifinal 2", "Estadio Calvo y Bascuñan", "Argentina", "Paraguay");
+        TournamentComponent match7 = new Match("Final", "Estadio Nacional", "Chile", "Argentina");
 
-        TournamentComponent round1 = new TournamentRound("Grupo A", "Primera Fase");
-        round1.add(match1);
-        round1.add(match2);
+        // Defino las rondas del torneo, con sus respectivos partidos. Las rondas de cuartos de final, semifinales y finales.
+        TournamentComponent quarterfinal = new TournamentRound("Cuarto de final", "Valparaiso");
+        quarterfinal.add(match1);
+        quarterfinal.add(match2);
+        quarterfinal.add(match3);
+        quarterfinal.add(match4);
 
-        TournamentComponent round2 = new TournamentRound("Grupo B", "Primera Fase");
-        round2.add(match3);
-        round2.add(match4);
+        TournamentComponent semifinal = new TournamentRound("Semifinales", "Antofagasta");
+        semifinal.add(match5);
+        semifinal.add(match6);
+        semifinal.add(quarterfinal);
 
-        TournamentComponent round3 = new TournamentRound("Copa Libertadores", "Brazil 2014");
-        round3.add(round1);
-        round3.add(round2);
+        TournamentComponent finals = new TournamentRound("Final", "Copa America");
+        finals.add(match7);
+        finals.add(semifinal);
 
-        String name = "Match 1";
-        TournamentComponent FindMatch = round3.search(name);
+        // Despliego los partidos del torneo, a partir de la final.
+        finals.display();
 
-        if(FindMatch != null){
+        System.out.println("    " );
+
+        String name = "Cuarto de final 1";
+        System.out.println("Buscando "+ name);
+        TournamentComponent searchedMatch = finals.search(name);
+
+        if(searchedMatch != null){
             System.out.println("Encontrado, la informacion de lo buscado es: ");
-            FindMatch.display();
+            searchedMatch.display();
         }
         else{
             System.out.println(name + " no encontrado");
         }
+        System.out.println("    " );
 
-        //round3.display();
+        finals.display();
+
+        System.out.println("    " );
+        System.out.println("Eliminando: "+ name);
+
+        finals.remove(name);
+        TournamentComponent searchDeletedMatch = finals.search(name);
+
+        System.out.println("    " );
+        if(searchDeletedMatch != null){
+            System.out.println("Encontrado, la informacion de lo buscado es: ");
+            searchDeletedMatch.display();
+        }
+        else{
+            System.out.println(name + " no encontrado");
+        }
+        System.out.println("    " );
+
+        finals.display();
+
     }
 }
