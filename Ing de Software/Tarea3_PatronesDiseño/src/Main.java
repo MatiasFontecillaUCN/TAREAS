@@ -12,6 +12,13 @@
  * las rondas del torneo, con sus respectivos partidos. Las rondas de cuartos de final, semifinales y finales. Luego,
  * se agregaron los partidos a las rondas correspondientes. Finalmente, se agregaron las rondas a la ronda de finales.
  * 
+ * Se útilizan los mismos métodos para agregar, eliminar y buscar, tanto en la clase Match como en la clase TournamentRound.
+ * Sin embargo cada uno tiene su propia implementación. En la clase Match, los métodos add, remove y search lanzan una
+ * excepción UnsupportedOperationException, ya que un partido no puede tener componentes hijos, ni tampoco puede
+ * tener componentes agregados o eliminados. En la clase TournamentRound, los métodos add, remove y search tienen una
+ * implementación que permite agregar, eliminar y buscar componentes hijos, que pueden ser partidos o rondas.
+ * 
+ * 
  * Finalmente, se implementó un buscar y un eliminar, para experimentar con el patrón Composite.
  */
 public class Main {
