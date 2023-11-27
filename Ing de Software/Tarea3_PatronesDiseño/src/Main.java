@@ -10,18 +10,39 @@ public class Main {
      */
     public static void main(String[] args) {
         // Definimos los partidos, con sus respectivos equipos y estadios.
-        TournamentComponent match1 = new Match("Cuarto de final 1", "Estadio Elías Figueroa Brander", "Chile", "Uruguay");
-        // ... (otros partidos)
+        TournamentComponent match1 = new Match("Cuarto de final 1", "Estadio Elías Figueroa Brander", "Chile",
+                "Uruguay");
+        TournamentComponent match2 = new Match("Cuarto de final 2", "Estadio Sausalito", "Bolivia", "Perú");
+        TournamentComponent match3 = new Match("Cuarto de final 3", "Estadio Elías Figueroa Brander", "Argentina",
+                "Colombia");
+        TournamentComponent match4 = new Match("Cuarto de final 4", "Estadio Sausalito", "Brasil", "Paraguay");
+        TournamentComponent match5 = new Match("Semifinal 1", "Estadio Calvo y Bascuñan", "Chile", "Perú");
+        TournamentComponent match6 = new Match("Semifinal 2", "Estadio Calvo y Bascuñan", "Argentina", "Paraguay");
+        TournamentComponent match7 = new Match("Final", "Estadio Nacional", "Chile", "Argentina");
 
-        // Definimos las rondas del torneo, con sus respectivos partidos.
+        // Defino las rondas del torneo, con sus respectivos partidos. Las rondas de cuartos de final, semifinales y finales.
         TournamentComponent quarterfinal = new TournamentRound("Cuarto de final", "Valparaiso");
-        // ... (otras rondas)
+        quarterfinal.add(match1);
+        quarterfinal.add(match2);
+        quarterfinal.add(match3);
+        quarterfinal.add(match4);
 
-        // Desplegamos los partidos del torneo, a partir de la final.
+        TournamentComponent semifinal = new TournamentRound("Semifinales", "Antofagasta");
+        semifinal.add(match5);
+        semifinal.add(match6);
+        semifinal.add(quarterfinal);
+
+        TournamentComponent finals = new TournamentRound("Final", "Copa America");
+        finals.add(match7);
+        finals.add(semifinal);
+
+        // Despliego los partidos del torneo, a partir de la final.
         finals.display();
+        System.out.println("    " );
 
         // Buscamos un partido por nombre.
         String name = "Cuarto de final 1";
+        System.out.println("Buscando: "+name)
         TournamentComponent searchedMatch = finals.search(name);
 
         // Si encontramos el partido, lo mostramos.
@@ -31,6 +52,7 @@ public class Main {
         } else {
             System.out.println(name + " no encontrado");
         }
+        System.out.println("    " );
 
         // Eliminamos un partido por nombre.
         System.out.println("Eliminando: "+ name);
@@ -46,6 +68,7 @@ public class Main {
         } else {
             System.out.println(name + " no encontrado");
         }
+        System.out.println("    " );
 
         // Desplegamos los partidos del torneo, a partir de la final, para verificar que el partido se eliminó.
         finals.display();
