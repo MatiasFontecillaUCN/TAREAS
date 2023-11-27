@@ -9,7 +9,9 @@ public class Main {
      * @param args Los argumentos de la línea de comandos.
      */
     public static void main(String[] args) {
-        // Definimos los partidos, con sus respectivos equipos y estadios.
+
+
+        // Definimos los partidos, con sus respectivos equipos y estadios, de tipo TournamentComponent.
         TournamentComponent match1 = new Match("Cuarto de final 1", "Estadio Elías Figueroa Brander", "Chile",
                 "Uruguay");
         TournamentComponent match2 = new Match("Cuarto de final 2", "Estadio Sausalito", "Bolivia", "Perú");
@@ -20,7 +22,8 @@ public class Main {
         TournamentComponent match6 = new Match("Semifinal 2", "Estadio Calvo y Bascuñan", "Argentina", "Paraguay");
         TournamentComponent match7 = new Match("Final", "Estadio Nacional", "Chile", "Argentina");
 
-        // Defino las rondas del torneo, con sus respectivos partidos. Las rondas de cuartos de final, semifinales y finales.
+        // Definimos los partidos, con sus respectivos equipos y estadios, de tipo TournamentComponent.
+
         TournamentComponent quarterfinal = new TournamentRound("Cuarto de final", "Valparaiso");
         quarterfinal.add(match1);
         quarterfinal.add(match2);
@@ -42,7 +45,7 @@ public class Main {
 
         // Buscamos un partido por nombre.
         String name = "Cuarto de final 1";
-        System.out.println("Buscando: "+name)
+        System.out.println("Buscando: "+name);
         TournamentComponent searchedMatch = finals.search(name);
 
         // Si encontramos el partido, lo mostramos.
